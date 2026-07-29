@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aber Vehicle Registration Services - Traffic Fines Inquiry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6b1d2f;
+        }
+        .header-logo-badge {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 10px;
+            padding: 6px 14px;
+            box-shadow: 0 3px 10px rgba(107, 29, 47, 0.12);
+            gap: 12px;
+        }
+        .logo-emblem {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6b1d2f, #4a1320);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-title-main {
+            font-size: 15px;
+            font-weight: 900;
+            color: #6b1d2f;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        .logo-subtitle-sub {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555555;
+            letter-spacing: 0.8px;
+        }
+        .lang-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .lang-btn:hover {
+            background-color: #521423;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .hero-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero-section h2 {
+            font-size: 18px;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .hero-section h1 {
+            font-size: 26px;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .start-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(107, 29, 47, 0.2);
+        }
+        .start-btn:hover {
+            background-color: #521423;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #eaeaea;
+        }
+        .service-card h3 {
+            color: #6b1d2f;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        .service-card p, .service-card li {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .service-card ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .fees-box {
+            background-color: #fcf8f8;
+            border-left: 4px solid #6b1d2f;
+            padding: 12px 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #6b1d2f;
+        }
+        .faq-container {
+            margin-bottom: 40px;
+        }
+        .faq-title {
+            font-size: 22px;
+            color: #6b1d2f;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .faq-card {
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: #fff;
+        }
+        .faq-question {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .faq-icon {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6b1d2f;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcf8f8;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .faq-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+        .faq-card.active .faq-content {
+            padding: 15px 20px;
+            max-height: 150px;
+            border-top: 1px solid #eee;
+        }
+        .faq-card.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .legal-pages-section {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .legal-pages-title {
+            font-size: 18px;
+            color: #6b1d2f;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .legal-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .legal-link-item {
+            background-color: #fcf8f8;
+            border: 1px solid #e8d7dc;
+            border-radius: 6px;
+            padding: 12px 15px;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .legal-link-item:hover {
+            background-color: #f3e6e8;
+            transform: translateY(-2px);
+        }
+        .legal-link-item a {
+            color: #6b1d2f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+        }
+
+        footer {
+            background-color: #6b1d2f;
+            color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            font-size: 13px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+        .footer-section h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #f3d6dc;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+        .footer-section p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .disclaimer-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 12px;
+            border: 1px dashed rgba(255,255,255,0.3);
+            text-align: center;
+            grid-column: 1 / -1;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 12px;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-right">
+            <button class="menu-icon" aria-label="Menu">☰</button>
+            <div class="header-logo-badge">
+                <div class="logo-emblem">A</div>
+                <div class="logo-text-group">
+                    <span class="logo-title-main">ABER</span>
+                    <span class="logo-subtitle-sub">Vehicle Registration</span>
+                </div>
+            </div>
+        </div>
+        <a href="index_ar.html" class="lang-btn">العربية</a>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h2>Aber Vehicle Registration Services</h2>
+            <h1>Traffic Fines Inquiry</h1>
+            <button class="start-btn">Start Service</button>
+        </div>
+
+        <div class="service-card">
+            <h3>Service Description</h3>
+            <p>This service provided by <strong>Aber Vehicle Registration Services L.L.C</strong> allows easy inquiry regarding traffic fines registered against vehicles.</p>
+            
+            <h3 style="margin-top: 25px;">Inquiry Steps</h3>
+            <ul>
+                <li><strong>Inquiry by Vehicle Number:</strong> Enter the vehicle number and select the category.</li>
+                <li><strong>Inquiry by Personal Number:</strong> Click on the personal number tab and enter your personal ID number.</li>
+                <li><strong>Inquiry by Establishment Number:</strong> Click on the establishment number tab and enter the company number.</li>
+                <li>Enter the verification code and click on <strong>Inquire</strong>.</li>
+            </ul>
+
+            <div class="fees-box">
+                Fees: There are no fees for this service.
+            </div>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-title">Frequently Asked Questions</div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">1. Are there any financial fees for the traffic fines inquiry service?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">No, the service is completely free of charge and there are no fees for inquiring about traffic fines through our platform.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">2. How can I inquire using the vehicle number?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">You can do this by entering the traffic plate number, choosing the category and associated code, then entering the verification code and clicking inquire.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">3. Can companies inquire using an establishment number?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">Yes, by clicking on the establishment number tab and entering the company's specific number to view all associated vehicles and fines.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">4. What documents are required for personal inquiry?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">The inquiry process only requires entering the approved personal number or accurate identification details to retrieve the traffic record.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">5. What should you do if an error occurs in the verification code?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">You must ensure that the numbers displayed in the image are written correctly. If the error persists, you can refresh the page and try again.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">6. Does the service cover all emirates of the country?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">The service is dedicated to vehicles and plates registered in accordance with the regulatory scope and approved data for the vehicle services sector.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">7. How is the personal number used in the system?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">By switching to the personal number tab in the inquiry interface and then entering the number with its correct digits.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">8. Do fines appear immediately and updated?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">Yes, the system displays the latest recorded data associated with the vehicle number or traffic file at the moment of inquiry.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">9. Is Aber considered an official government entity?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">No, Aber Vehicle Registration Services is a registered private company and not an official government entity.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">10. How can I contact support if there is a technical problem?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">You can contact us via the support channels available on the website or visit our main headquarters in Dubai Industrial City.</div>
+            </div>
+
+        </div>
+
+        <div class="legal-pages-section">
+            <div class="legal-pages-title">Policies and Legal Pages</div>
+            <div class="legal-links-grid">
+                <div class="legal-link-item">
+                    <a href="terms.php">Terms and Conditions</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="privacy.php">Privacy Policy</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="disclaimer.php">Disclaimer</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="policies.php">Policies & Regulations</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Basic License Information</h3>
+                <p>Trade Name: Aber Vehicle Registration Services L.L.C</p>
+                <p>License Number: 816358</p>
+                <p>Unified License: BC6639</p>
+                <p>License Type: Commercial</p>
+                <p>License Status: Active</p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal Details & Issuance</h3>
+                <p>Legal Form: Limited Liability Company - Single Person</p>
+                <p>Issuing Authority: Department of Economy and Tourism</p>
+                <p>Issuance Date: 2018-10-11</p>
+                <p>Expiry Date: 2026-10-10</p>
+                <p>Address: Land owned by Dubai Industrial City - Saih Shuaib 2, Plot 1 Saih Saleem</p>
+            </div>
+            <div class="footer-section">
+                <h3>License Activities</h3>
+                <p>• Vehicles Services Broker - Active</p>
+                <p>• Technical Testing of Vehicles - Active</p>
+                <p>• Goods Transport Means Inspection Services - Active</p>
+                <p>• Vehicle Registration Services - Active</p>
+            </div>
+
+            <div class="disclaimer-box">
+                Important Disclaimer: This platform belongs to Aber Vehicle Registration Services L.L.C, which is a private commercial entity and does not represent any official government body in the country.
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            All rights reserved to Aber Vehicle Registration Services L.L.C © 2026
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(header) {
+            const card = header.parentElement;
+            const isActive = card.classList.contains('active');
+            
+            document.querySelectorAll('.faq-card').forEach(c => {
+                c.classList.remove('active');
+            });
+
+            if (!isActive) {
+                card.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
