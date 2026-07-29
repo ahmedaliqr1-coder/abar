@@ -334,69 +334,57 @@
             border-bottom: 3px solid #6b1d2f;
             padding-bottom: 15px;
         }
-        .inquiry-cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-        .inquiry-card {
-            background: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .inquiry-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #6b1d2f;
-        }
-        .inquiry-icon {
-            width: auto;
-            height: auto;
-            margin: 0 auto 12px;
+
+        .inquiry-icons-row {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #6b1d2f;
-            transition: all 0.3s ease;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
-        .icon-img {
-            width: 48px;
-            height: 48px;
+        .inquiry-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .inquiry-icon-img {
+            width: 80px;
+            height: 80px;
             object-fit: contain;
         }
-        .inquiry-card:hover .inquiry-icon {
-            transform: scale(1.1);
-        }
-        .inquiry-card h3 {
+        .inquiry-icon-label {
             font-size: 16px;
-            color: #333333;
-            margin-bottom: 12px;
+            color: #000000;
             font-weight: 600;
+            text-align: center;
         }
-        .inquiry-btn {
+        .inquiry-buttons-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .inquiry-btn-main {
             background-color: #6b1d2f;
             color: white;
             border: none;
-            padding: 8px 16px;
-            font-size: 13px;
+            padding: 10px 30px;
+            font-size: 14px;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 2px 4px rgba(107, 29, 47, 0.15);
+            box-shadow: 0 2px 6px rgba(107, 29, 47, 0.2);
         }
-        .inquiry-btn:hover {
+        .inquiry-btn-main:hover {
             background-color: #521423;
-            transform: scale(1.02);
-            box-shadow: 0 3px 8px rgba(107, 29, 47, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(107, 29, 47, 0.3);
         }
-        .inquiry-btn:active {
+        .inquiry-btn-main:active {
             transform: scale(0.98);
         }
         @media (max-width: 768px) {
@@ -486,33 +474,29 @@
         <!-- قسم الاستعلام عن المخالفات -->
         <div class="inquiry-section">
             <h2 class="inquiry-title">يمكنك الاستعلام عن المخالفات المرورية من خلال الخطوات التالية</h2>
-            <div class="inquiry-cards-container">
-                <!-- بطاقة قيد المنشأة -->
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <img src="assets/icon-building.png" alt="قيد المنشأة" class="icon-img">
-                    </div>
-                    <h3>قيد المنشأة</h3>
-                    <button class="inquiry-btn">ابدأ الخدمة</button>
+            <div class="inquiry-icons-row">
+                <!-- أيقونة قيد المنشأة -->
+                <div class="inquiry-icon-item">
+                    <img src="assets/icon-building.png" alt="قيد المنشأة" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">قيد المنشأة</p>
                 </div>
 
-                <!-- بطاقة الرقم الشخصي -->
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <img src="assets/icon-person.png" alt="الرقم الشخصي" class="icon-img">
-                    </div>
-                    <h3>الرقم الشخصي</h3>
-                    <button class="inquiry-btn">ابدأ الخدمة</button>
+                <!-- أيقونة الرقم الشخصي -->
+                <div class="inquiry-icon-item">
+                    <img src="assets/icon-person.png" alt="الرقم الشخصي" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">الرقم الشخصي</p>
                 </div>
 
-                <!-- بطاقة رقم المركبة -->
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <img src="assets/icon-car.png" alt="رقم المركبة" class="icon-img">
-                    </div>
-                    <h3>رقم المركبة</h3>
-                    <button class="inquiry-btn">ابدأ الخدمة</button>
+                <!-- أيقونة رقم المركبة -->
+                <div class="inquiry-icon-item">
+                    <img src="assets/icon-car.png" alt="رقم المركبة" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">رقم المركبة</p>
                 </div>
+            </div>
+            <div class="inquiry-buttons-row">
+                <button class="inquiry-btn-main">استعلم الآن</button>
+                <button class="inquiry-btn-main">استعلم الآن</button>
+                <button class="inquiry-btn-main">استعلم الآن</button>
             </div>
         </div>
 
