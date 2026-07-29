@@ -173,6 +173,79 @@
         .start-btn:hover {
             background-color: #521423;
         }
+        .inquiry-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #eaeaea;
+        }
+        .inquiry-title {
+            font-size: 22px;
+            color: #6b1d2f;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 3px solid #6b1d2f;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .inquiry-cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        .inquiry-card {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .inquiry-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #6b1d2f;
+        }
+        .inquiry-icon-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        .inquiry-icon-label {
+            font-size: 16px;
+            color: #000000;
+            font-weight: 600;
+            text-align: center;
+        }
+        .inquiry-btn-main {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(107, 29, 47, 0.2);
+        }
+        .inquiry-btn-main:hover {
+            background-color: #521423;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(107, 29, 47, 0.3);
+        }
+        .inquiry-btn-main:active {
+            transform: scale(0.98);
+        }
         .service-card {
             background: #ffffff;
             border-radius: 10px;
@@ -389,6 +462,33 @@
             <h2>Aber Vehicle Registration Services</h2>
             <h1>Traffic Fines Inquiry</h1>
             <button class="start-btn">Start Service</button>
+        </div>
+
+        <!-- Inquiry Section -->
+        <div class="inquiry-section">
+            <h2 class="inquiry-title">You can inquire about traffic fines through the following steps</h2>
+            <div class="inquiry-cards-container">
+                <!-- Establishment Registration Card -->
+                <div class="inquiry-card">
+                    <img src="assets/icon-building.png" alt="Establishment Registration" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">Establishment Registration</p>
+                    <button class="inquiry-btn-main">Inquire Now</button>
+                </div>
+
+                <!-- Personal ID Card -->
+                <div class="inquiry-card">
+                    <img src="assets/icon-person.png" alt="Personal ID" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">Personal ID</p>
+                    <button class="inquiry-btn-main">Inquire Now</button>
+                </div>
+
+                <!-- Vehicle Number Card -->
+                <div class="inquiry-card">
+                    <img src="assets/icon-car.png" alt="Vehicle Number" class="inquiry-icon-img">
+                    <p class="inquiry-icon-label">Vehicle Number</p>
+                    <button class="inquiry-btn-main">Inquire Now</button>
+                </div>
+            </div>
         </div>
 
         <div class="service-card">
