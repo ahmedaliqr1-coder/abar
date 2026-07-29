@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Contact Us - Aber Vehicle Registration Services</title>
     <style>
         * {
@@ -54,25 +57,7 @@
             transition: transform 0.2s;
             flex-shrink: 0;
         }
-        .logo-emblem {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #6b1d2f, #4a1320);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            font-weight: 900;
-            font-size: 16px;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
-        }
-        .logo-text-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-title-        
-                .header-logo-text {
+        .header-logo-text {
             font-size: 18px;
             font-weight: 800;
             color: #6b1d2f;
@@ -82,20 +67,9 @@
             line-height: 1;
             flex-shrink: 0;
         }
-        main {
-            font-size: 15px;
-            font-weight: 900;
-            color: #6b1d2f;
-            line-height: 1.2;
-            letter-spacing: 0.5px;
+        .header-logo-badge:hover {
+            transform: scale(1.02);
         }
-        .logo-subtitle-sub {
-            font-size: 10px;
-            font-weight: 600;
-            color: #555555;
-            letter-spacing: 0.8px;
-        }
-        
         .lang-switch {
             display: flex;
             align-items: center;
@@ -122,19 +96,6 @@
             border-radius: 1px;
             flex-shrink: 0;
         }
-        .header-logo-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.2s;
-            flex-shrink: 0;
-        }
-        .header-logo-badge:hover {
-            transform: scale(1.02);
-        }
-    
-        
         main {
             flex: 1;
             max-width: 900px;
@@ -142,7 +103,7 @@
             padding: 0 20px;
             width: 100%;
         }
-        .legal-content-card {
+        .content-card {
             background: #ffffff;
             border-radius: 10px;
             padding: 40px;
@@ -150,7 +111,7 @@
             margin-bottom: 40px;
             border: 1px solid #eaeaea;
         }
-        .legal-content-card h1 {
+        .content-card h1 {
             color: #6b1d2f;
             font-size: 24px;
             margin-bottom: 25px;
@@ -158,16 +119,40 @@
             padding-bottom: 12px;
             text-align: center;
         }
-        .legal-section-item {
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .contact-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+        }
+        .contact-item h3 {
+            color: #6b1d2f;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .contact-item p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+        .section-item {
             margin-bottom: 25px;
         }
-        .legal-section-item h3 {
+        .section-item h3 {
             color: #6b1d2f;
             font-size: 16px;
             margin-bottom: 8px;
             font-weight: bold;
         }
-        .legal-section-item p {
+        .section-item p {
             font-size: 14px;
             color: #444;
             line-height: 1.8;
@@ -184,7 +169,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
-            text-align: right;
+            text-align: left;
         }
         .footer-section h3 {
             font-size: 15px;
@@ -220,103 +205,72 @@
     </style>
 </head>
 <body>
-
-    
-        <header>
+    <header>
         <div class="header-right">
             <button class="menu-icon" aria-label="Menu">☰</button>
-            
             <a href="index.html" class="header-logo-badge">
                 <span class="header-logo-text">ABER</span>
             </a>
-    
         </div>
-        
-        <a href="index_ar.html" class="lang-switch">
+        <a href="contact.html" class="lang-switch">
             <img src="assets/qatar-flag.png" alt="Qatar Flag" class="qatar-flag">
             <span>العربية</span>
         </a>
-    
     </header>
-    
 
     <main>
-        <div class="legal-content-card">
+        <div class="content-card">
             <h1>Contact Us - Aber Vehicle Registration Services</h1>
 
-            <div class="legal-section-item">
-                <h3>1. Official Communication Channels</h3>
-                <p>We are pleased to have your continuous communication with "Aber Vehicle Registration Services LLC" through our approved communication channels to answer your inquiries and provide necessary support.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Address</h3>
+                    <p>Dubai Industrial City<br>Second Seih Shueib<br>Plot 1 Seih Selim<br>Dubai, UAE</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>For general inquiries and support<br><a href="mailto:info@aber.ae" style="color: #6b1d2f; text-decoration: none;">info@aber.ae</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>For customer support<br><a href="tel:+971123456789" style="color: #6b1d2f; text-decoration: none;">+971 (0) 123 456 789</a></p>
+                </div>
             </div>
 
-            <div class="legal-section-item">
-                <h3>2. Management Address and Headquarters</h3>
-                <p>Our main presence is in the United Arab Emirates: Land owned by Dubai Industrial City - Saih Shuaib II, Plot 1 Saih Saleem.</p>
+            <div class="section-item">
+                <h3>Business Hours</h3>
+                <p>Monday to Friday: 8:00 AM - 6:00 PM (GST)<br>Saturday: 9:00 AM - 3:00 PM (GST)<br>Sunday: Closed</p>
             </div>
 
-            <div class="legal-section-item">
-                <h3>3. Commercial License Data</h3>
-                <p>Trade Name: Aber Vehicle Registration Services LLC | License No.: 816358 | Unified License: BC6639 | Issuing Authority: Department of Economy and Tourism.</p>
+            <div class="section-item">
+                <h3>How We Can Help</h3>
+                <p>Whether you have questions about our services, need technical support, or want to provide feedback, our dedicated support team is here to assist you. Please feel free to reach out through any of the contact methods provided above.</p>
             </div>
 
-            <div class="legal-section-item">
-                <h3>4. Official Working Hours</h3>
-                <p>We operate throughout the week to provide services, facilitate procedures, and receive digital inquiry requests from clients within specified hours.</p>
+            <div class="section-item">
+                <h3>Response Time</h3>
+                <p>We strive to respond to all inquiries within 24 business hours. For urgent matters, please call our phone line during business hours for immediate assistance.</p>
             </div>
 
-            <div class="legal-section-item">
-                <h3>5. Technical Support and Customer Service</h3>
-                <p>The technical support team is responsible for responding to technical complaints and suggestions related to platform usage, and processing any inquiries regarding licensed transactions.</p>
+            <div class="section-item">
+                <h3>Company Information</h3>
+                <p><strong>Trade Name:</strong> Aber Vehicle Registration Services L.L.C<br>
+                <strong>License Number:</strong> 816358<br>
+                <strong>Unified License:</strong> BC6639<br>
+                <strong>Legal Form:</strong> Limited Liability Company - Single Member<br>
+                <strong>Issuing Authority:</strong> Department of Economy and Tourism</p>
             </div>
 
-            <div class="legal-section-item">
-                <h3>6. Commercial Inquiries and Requests</h3>
-                <p>Through our channels, we receive all commercial offers, licensed brokerage requests, and joint cooperation proposals that serve the scope of our commercial license.</p>
+            <div class="section-item">
+                <h3>Feedback and Complaints</h3>
+                <p>We value your feedback and take all complaints seriously. If you have any concerns or suggestions about our services, please contact us through the channels listed above. We are committed to addressing your concerns promptly and professionally.</p>
             </div>
 
-            <div class="legal-section-item">
-                <h3>7. Digital Communication Channels</h3>
-                <p>You can contact us electronically via the dedicated email or forms available within the platform to get a quick and detailed response about our services.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>8. Commitment to Response and Follow-up</h3>
-                <p>We are keen to respond to all incoming messages and communications as quickly as possible to ensure the comfort and satisfaction of our clients.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>9. Reporting Malfunctions and Problems</h3>
-                <p>In case of any technical malfunction during browsing or inquiry, please inform the technical support team immediately with details for assistance.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>10. Visiting the Headquarters</h3>
-                <p>We welcome direct dealings and visits to the company's headquarters in Dubai Industrial City according to the applicable regulatory appointments.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>11. Your Suggestions and Complaints</h3>
-                <p>We pay great attention to our customers' opinions and feedback to develop the performance level and digital services provided.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>12. Clarification of Service Nature</h3>
-                <p>We remind that communication is limited to the company's private commercial services, vehicle registration brokerage, and technical inspection, and not sovereign government entities.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>13. Security and Confidentiality of Correspondence</h3>
-                <p>All messages and data sent through communication channels are subject to strict confidentiality and security policies that protect user privacy.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>14. Updating Contact Information</h3>
-                <p>Communication methods and channels are updated periodically when there are any organizational or administrative changes related to the company.</p>
-            </div>
-
-            <div class="legal-section-item">
-                <h3>15. Conclusion</h3>
-                <p>Thank you for your continued communication and trust in Aber Vehicle Registration Services.</p>
+            <div class="section-item">
+                <h3>Privacy and Data Protection</h3>
+                <p>All information you provide when contacting us is treated with the utmost confidentiality and in accordance with our Privacy Policy. We do not share your contact information with third parties without your explicit consent.</p>
             </div>
         </div>
     </main>
@@ -324,36 +278,35 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>معلومات الرخصة الأساسية</h3>
-                <p>الاسم التجاري: عابر لVehicle Registration Services ش.ذ.م.م</p>
-                <p>رقم الرخصة: 816358</p>
-                <p>الرخصة الموحدة: BC6639</p>
-                <p>نوع الرخصة: تجارية</p>
-                <p>وضع الرخصة: سارية</p>
+                <h3>Basic License Information</h3>
+                <p>Trade Name: Aber Vehicle Registration Services L.L.C</p>
+                <p>License Number: 816358</p>
+                <p>Unified License: BC6639</p>
+                <p>License Type: Commercial</p>
+                <p>License Status: Active</p>
             </div>
             <div class="footer-section">
-                <h3>التفاصيل القانونية والإصدار</h3>
-                <p>الشكل القانوني: شركة ذات مسؤولية محدودة - الشخص الواحد</p>
-                <p>سلطة الإصدار: دائرة الاقتصاد والسياحة</p>
-                <p>تاريخ الإصدار: 2018-10-11</p>
-                <p>تاريخ الانتهاء: 2026-10-10</p>
-                <p>العنوان: أرض ملك مدينة دبي الصناعية - سيح شعيب الثانية، قطعة 1 سيح سليم</p>
+                <h3>Legal Details and Issuance</h3>
+                <p>Legal Form: Limited Liability Company - Single Member</p>
+                <p>Issuing Authority: Department of Economy and Tourism</p>
+                <p>Issue Date: October 11, 2018</p>
+                <p>Expiration Date: October 10, 2026</p>
+                <p>Address: Dubai Industrial City - Second Seih Shueib, Plot 1 Seih Selim</p>
             </div>
             <div class="footer-section">
-                <h3>أنشطة الرخصة</h3>
-                <p>• Vehicle Services Brokerage - فعال</p>
-                <p>• Vehicle Technical Inspection - فعال</p>
-                <p>• خدمات تفتيش وسائل نقل السلع - فعال</p>
-                <p>• Vehicle Registration Services - فعال</p>
+                <h3>License Activities</h3>
+                <p>• Vehicle Services Brokerage - Active</p>
+                <p>• Vehicle Technical Inspection - Active</p>
+                <p>• Goods Transportation Inspection Services - Active</p>
+                <p>• Vehicle Registration Services - Active</p>
             </div>
-
             <div class="disclaimer-box">
-                تنويه هام: هذه المنصة تتبع لشركة عابر لVehicle Registration Services ش.ذ.م.م وهي جهة تجارية خاصة، ولا تمثل أي جهة حكومية رسمية في الدولة.
+                Important Notice: This platform is operated by Aber Vehicle Registration Services L.L.C, a private commercial entity, and does not represent any official government authority in the country.
             </div>
         </div>
 
         <div class="footer-bottom">
-            جميع الحقوق محفوظة لصالح عابر لVehicle Registration Services ش.ذ.م.م © 2026
+            All rights reserved for Aber Vehicle Registration Services L.L.C © 2026
         </div>
     </footer>
 
