@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عابر لخدمات تسجيل المركبات - الاستعلام عن المخالفات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6b1d2f;
+        }
+        .header-logo-badge {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 10px;
+            padding: 6px 14px;
+            box-shadow: 0 3px 10px rgba(107, 29, 47, 0.12);
+            gap: 12px;
+        }
+        .logo-emblem {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6b1d2f, #4a1320);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-title-main {
+            font-size: 15px;
+            font-weight: 900;
+            color: #6b1d2f;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        .logo-subtitle-sub {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555555;
+            letter-spacing: 0.8px;
+        }
+        .lang-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .lang-btn:hover {
+            background-color: #521423;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .hero-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .hero-section h2 {
+            font-size: 18px;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .hero-section h1 {
+            font-size: 26px;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .start-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(107, 29, 47, 0.2);
+        }
+        .start-btn:hover {
+            background-color: #521423;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #eaeaea;
+        }
+        .service-card h3 {
+            color: #6b1d2f;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+        }
+        .service-card p, .service-card li {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        .service-card ul {
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+        .fees-box {
+            background-color: #fcf8f8;
+            border-right: 4px solid #6b1d2f;
+            padding: 12px 15px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #6b1d2f;
+        }
+        .faq-container {
+            margin-bottom: 40px;
+        }
+        .faq-title {
+            font-size: 22px;
+            color: #6b1d2f;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .faq-card {
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: #fff;
+        }
+        .faq-question {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .faq-icon {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6b1d2f;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcf8f8;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .faq-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+        .faq-card.active .faq-content {
+            padding: 15px 20px;
+            max-height: 150px;
+            border-top: 1px solid #eee;
+        }
+        .faq-card.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        /* قسم الصفحات القانونية تحت الأسئلة الشائعة */
+        .legal-pages-section {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .legal-pages-title {
+            font-size: 18px;
+            color: #6b1d2f;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .legal-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .legal-link-item {
+            background-color: #fcf8f8;
+            border: 1px solid #e8d7dc;
+            border-radius: 6px;
+            padding: 12px 15px;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .legal-link-item:hover {
+            background-color: #f3e6e8;
+            transform: translateY(-2px);
+        }
+        .legal-link-item a {
+            color: #6b1d2f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+        }
+
+        footer {
+            background-color: #6b1d2f;
+            color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            font-size: 13px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: right;
+        }
+        .footer-section h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #f3d6dc;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+        .footer-section p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .disclaimer-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 12px;
+            border: 1px dashed rgba(255,255,255,0.3);
+            text-align: center;
+            grid-column: 1 / -1;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 12px;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-right">
+            <button class="menu-icon" aria-label="القائمة">☰</button>
+            <div class="header-logo-badge">
+                <div class="logo-emblem">ع</div>
+                <div class="logo-text-group">
+                    <span class="logo-title-main">عَابِر</span>
+                    <span class="logo-subtitle-sub">لخدمات تسجيل المركبات</span>
+                </div>
+            </div>
+        </div>
+        <button class="lang-btn">English</button>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h2>عابر لخدمات تسجيل المركبات</h2>
+            <h1>الاستعلام عن المخالفات المرورية</h1>
+            <button class="start-btn">ابدأ الخدمة</button>
+        </div>
+
+        <div class="service-card">
+            <h3>وصف الخدمة</h3>
+            <p>تتيح هذه الخدمة المقدمة من شركة <strong>عابر لخدمات تسجيل المركبات ش.ذ.م.م</strong> سهولة الاستعلام عن المخالفات المرورية المسجلة على المركبة.</p>
+            
+            <h3 style="margin-top: 25px;">خطوات الاستعلام</h3>
+            <ul>
+                <li><strong>الاستعلام برقم المركبة:</strong> إدخال رقم المركبة واختيار النوع.</li>
+                <li><strong>الاستعلام بالرقم الشخصي:</strong> الضغط على علامة التبويب الرقم الشخصي ثم إدخال الرقم الشخصي.</li>
+                <li><strong>الاستعلام برقم المنشأة:</strong> الضغط على علامة التبويب ورقم المنشأة ثم إدخال رقم المنشأة.</li>
+                <li>إدخال رمز التحقق ثم الضغط على <strong>استعلام</strong>.</li>
+            </ul>
+
+            <div class="fees-box">
+                الرسوم: لا توجد رسوم على هذه الخدمة.
+            </div>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-title">الأسئلة الشائعة</div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">1. هل تتطلب خدمة الاستعلام عن المخالفات أي رسوم مالية؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">لا، الخدمة مجانية تماماً ولا توجد أي رسوم على عملية الاستعلام عن المخالفات المرورية من خلال منصتنا.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">2. كيف يمكنني الاستعلام باستخدام رقم المركبة؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">يمكنك ذلك عن طريق إدخال رقم اللوحة المرورية واختيار الفئة والرمز المرتبط بها ثم إدخال رمز التحقق والضغط على استعلام.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">3. هل يمكن الاستعلام برقم المنشأة للشركات؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">نعم، بالضغط على علامة تبويب رقم المنشأة وإدخال الرقم الخاص بالشركة لعرض كافة المركبات والمخالفات التابعة لها.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">4. ما هي المستندات المطلوبة للاستعلام الشخصي؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">لا تتطلب عملية الاستعلام سوى إدخال الرقم الشخصي المعتمد أو بيانات الهوية بدقة لاستخراج السجل المروري.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">5. ماذا تفعل إذا ظهر خطأ في رمز التحقق؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">يجب التأكد من كتابة الأرقام الظاهرة في الصورة بشكل صحيح، وإذا استمر الخطأ يمكنك تحديث الصفحة وإعادة المحاولة.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">6. هل تشمل الخدمة جميع إمارات الدولة؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">الخدمة مخصصة للمركبات واللوحات المسجلة وفقاً للنطاق التنظيمي والبيانات المعتمدة لقطاع خدمات المركبات.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">7. كيف يتم استخدام الرقم الشخصي في النظام؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">من خلال التبديل إلى تبويب الرقم الشخصي في واجهة الاستعلام ومن ثم إدخال الرقم المكون من خاناته الصحيحة.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">8. هل تظهر المخالفات بشكل فوري ومحدث؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">نعم، يعرض النظام أحدث البيانات المسجلة والمرتبطة برقم المركبة أو الملف المروري لحظة الاستعلام.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">9. هل شركة عابر تعتبر جهة حكومية رسمية؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">لا، شركة عابر لخدمات تسجيل المركبات هي شركة خاصة مسجلة وليست جهة حكومية رسمية.</div>
+            </div>
+
+            <div class="faq-card">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <span class="faq-question">10. كيف يمكنني التواصل في حال وجود مشكلة تقنية؟</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-content">يمكنك التواصل معنا عبر قنوات الدعم المتاحة على الموقع أو زيارة مقرنا الرئيسي في مدينة دبي الصناعية.</div>
+            </div>
+
+        </div>
+
+        <!-- قسم الصفحات القانونية والسياسات -->
+        <div class="legal-pages-section">
+            <div class="legal-pages-title">السياسات والصفحات القانونية</div>
+            <div class="legal-links-grid">
+                <div class="legal-link-item">
+                    <a href="terms.php">الشروط والأحكام</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="privacy.php">سياسة الخصوصية</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="disclaimer.php">إخلاء المسؤولية</a>
+                </div>
+                <div class="legal-link-item">
+                    <a href="policies.php">السياسات واللوائح</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>معلومات الرخصة الأساسية</h3>
+                <p>الاسم التجاري: عابر لخدمات تسجيل المركبات ش.ذ.م.م</p>
+                <p>رقم الرخصة: 816358</p>
+                <p>الرخصة الموحدة: BC6639</p>
+                <p>نوع الرخصة: تجارية</p>
+                <p>وضع الرخصة: سارية</p>
+            </div>
+            <div class="footer-section">
+                <h3>التفاصيل القانونية والإصدار</h3>
+                <p>الشكل القانوني: شركة ذات مسؤولية محدودة - الشخص الواحد</p>
+                <p>سلطة الإصدار: دائرة الاقتصاد والسياحة</p>
+                <p>تاريخ الإصدار: 2018-10-11</p>
+                <p>تاريخ الانتهاء: 2026-10-10</p>
+                <p>العنوان: أرض ملك مدينة دبي الصناعية - سيح شعيب الثانية، قطعة 1 سيح سليم</p>
+            </div>
+            <div class="footer-section">
+                <h3>أنشطة الرخصة</h3>
+                <p>• وسيط خدمات المركبات - فعال</p>
+                <p>• الفحص الفني للمركبات - فعال</p>
+                <p>• خدمات تفتيش وسائل نقل السلع - فعال</p>
+                <p>• خدمات تسجيل المركبات - فعال</p>
+            </div>
+
+            <div class="disclaimer-box">
+                تنويه هام: هذه المنصة تتبع لشركة عابر لخدمات تسجيل المركبات ش.ذ.م.م وهي جهة تجارية خاصة، ولا تمثل أي جهة حكومية رسمية في الدولة.
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            جميع الحقوق محفوظة لصالح عابر لخدمات تسجيل المركبات ش.ذ.م.م © 2026
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(header) {
+            const card = header.parentElement;
+            const isActive = card.classList.contains('active');
+            
+            document.querySelectorAll('.faq-card').forEach(c => {
+                c.classList.remove('active');
+            });
+
+            if (!isActive) {
+                card.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
