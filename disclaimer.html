@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إخلاء المسؤولية - عابر لخدمات تسجيل المركبات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6b1d2f;
+        }
+        .header-logo-badge {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 10px;
+            padding: 6px 14px;
+            box-shadow: 0 3px 10px rgba(107, 29, 47, 0.12);
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-emblem {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6b1d2f, #4a1320);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-title-main {
+            font-size: 15px;
+            font-weight: 900;
+            color: #6b1d2f;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        .logo-subtitle-sub {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555555;
+            letter-spacing: 0.8px;
+        }
+        .lang-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .lang-btn:hover {
+            background-color: #521423;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .legal-content-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #eaeaea;
+        }
+        .legal-content-card h1 {
+            color: #6b1d2f;
+            font-size: 24px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        .legal-section-item {
+            margin-bottom: 25px;
+        }
+        .legal-section-item h3 {
+            color: #6b1d2f;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .legal-section-item p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #6b1d2f;
+            color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            font-size: 13px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: right;
+        }
+        .footer-section h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #f3d6dc;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+        .footer-section p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .disclaimer-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 12px;
+            border: 1px dashed rgba(255,255,255,0.3);
+            text-align: center;
+            grid-column: 1 / -1;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 12px;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-right">
+            <button class="menu-icon" aria-label="القائمة">☰</button>
+            <a href="index_ar.html" class="header-logo-badge">
+                <div class="logo-emblem">ع</div>
+                <div class="logo-text-group">
+                    <span class="logo-title-main">عَابِر</span>
+                    <span class="logo-subtitle-sub">لخدمات تسجيل المركبات</span>
+                </div>
+            </a>
+        </div>
+        <a href="index.html" class="lang-btn">English</a>
+    </header>
+
+    <main>
+        <div class="legal-content-card">
+            <h1>إخلاء المسؤولية القانونية</h1>
+
+            <div class="legal-section-item">
+                <h3>1. طبيعة الكيان التجاري</h3>
+                <p>تُقر وتؤكد شركة "عابر لخدمات تسجيل المركبات ش.ذ.م.م" بأنها شركة تجارية خاصة مسجلة رسمياً تحت رخصة رقم 816358، وليست جهة حكومية رسمية أو ممثلاً لأي دائرة مرور حكومية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>2. طبيعة الخدمات المقدمة</h3>
+                <p>تقدم المنصة خدمات الوساطة والاستعلام وتسهيل الإجراءات المرتبطة بالمركبات ضمن النطاق التجاري المرخص للشركة، ولا تعد المنصة البوابة الحكومية الرسمية الرئيسية لإنجاز المعاملات السيادية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>3. دقة ومصدر البيانات</h3>
+                <p>على الرغم من حرصنا على توفير بيانات دقيقة ومحدثة، إلا أننا لا نتحمل المسؤولية القانونية المطلقة عن أي تأخير تقني أو اختلافات طارئة في تحديث السجلات الرقمية الخارجية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>4. الاستخدام الشخصي للموقع</h3>
+                <p>يتحمل المستخدم وحدة المسؤولية عن كيفية استخدامه للمعلومات والخدمات المتاحة عبر المنصة، ويقر بأن استخدام البيانات يتم على مسؤولحيته الشخصية الكاملة ودون أدنى مسؤولية على الشركة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>5. الأخطاء التقنية وانقطاع الخدمة</h3>
+                <p>لا تتحمل الشركة أي مسؤولية عن الأضرار المباشرة أو غير المباشرة الناتجة عن تعطل الموقع، انقطاع شبكة الإنترنت، الأخطاء البرمجية المفاجئة، أو هجمات الاختراق السيبراني الخارجي.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>6. أخطاء إدخال البيانات من المستخدم</h3>
+                <p>تخلي الشركة مسؤوليتها التامة عن أي نتائج غير صحيحة أو تعطل في عمليات الاستعلام الناتجة عن إدخال المستخدم لبيانات خاطئة، كأرقام اللوحات أو الهويات غير الدقيقة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>7. الروابط والمواقع الخارجية</h3>
+                <p>لا تتحمل المنصة أي مسؤولية قانونية عن محتويات أو ممارسات المواقع الخارجية الأخرى التي قد تظهر روابطها ضمن صفحاتنا، حيث تقع تلك المواقع تحت إشراف أطراف أخرى.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>8. الإجراءات والقرارات المرورية</h3>
+                <p>إن عمليات الاستعلام المقدمة عبر الموقع هي لأغراض الإرشاد والتسهيل، ولا تعتبر مستنداً قانونياً رسمياً معتمداً أمام الجهات القضائية أو المرورية إلا من خلال القنوات الحكومية المختصة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>9. التغييرات في محتوى المنصة</h3>
+                <p>تحتفظ الإدارة بحقها الكامل في تعديل، تعليق، أو إيقاف أي خدمة أو محتوى على الموقع في أي وقت دون إشعار مسبق ودون تحمل أي تعويضات تجاه المستخدمين أو الأطراف الأخرى.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>10. القوة القاهرة والأحداث الاستثنائية</h3>
+                <p>لا تعتبر الشركة مخلفة بنود الالتزام في حال حدوث ظروف قاهرة خارجة عن الإرادة والسيطرة التقنية والبشرية، مثل الكوارث الطبيعية أو الأعطال العامة في البنية التحتية للاتصالات.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>11. حدود التعويض المالي</h3>
+                <p>في جميع الأحوال، إذا ثبت قانوناً أي مسؤولية على الشركة، فإن الحد الأقصى لأي تعويض محتمل لا يتجاوز قيمة الرسوم المدفوعة (إن وجدت) للخدمة موضع النزاع.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>12. الآراء والتفسيرات الشخصية</h3>
+                <p>إن النصوص والتفسيرات المتاحة في الأقسام المختلفة هي لأغراض التوضيح العام، ولا تعتبر استشارات قانونية متخصصة ملزمة، ويُفضل دائماً مراجعة الجهات الرسمية ذات الصلة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>13. حماية حقوق الملكية</h3>
+                <p>تخلي الشركة مسؤوليتها عن أي استغلال غير قانوني أو نسخ للمحتويات والعلامات التجارية الخاصة بالمنصة من قبل جهات خارجية دون إذن رسمي ومكتوب مسبق.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>14. مراجعة وتحديث إخلاء المسؤولية</h3>
+                <p>يحق لإدارة المنصة تحديث بنود إخلاء المسؤولية في أي وقت لتعكس المستجدات القانونية والتشغيلية، وتعتبر التسجيلات نافذة بمجرد عرضها على هذه الصفحة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>15. القبول والإقرار الشامل</h3>
+                <p>يُعد تصفحك للموقع أو النقر على زر "ابدأ الخدمة" أو استخدام أدوات الاستعلام إقراراً قانونياً قاطعاً بموافقتك على كافة بنود إخلاء المسؤولية المذكورة أعلاه.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>معلومات الرخصة الأساسية</h3>
+                <p>الاسم التجاري: عابر لخدمات تسجيل المركبات ش.ذ.م.م</p>
+                <p>رقم الرخصة: 816358</p>
+                <p>الرخصة الموحدة: BC6639</p>
+                <p>نوع الرخصة: تجارية</p>
+                <p>وضع الرخصة: سارية</p>
+            </div>
+            <div class="footer-section">
+                <h3>التفاصيل القانونية والإصدار</h3>
+                <p>الشكل القانوني: شركة ذات مسؤولية محدودة - الشخص الواحد</p>
+                <p>سلطة الإصدار: دائرة الاقتصاد والسياحة</p>
+                <p>تاريخ الإصدار: 2018-10-11</p>
+                <p>تاريخ الانتهاء: 2026-10-10</p>
+                <p>العنوان: أرض ملك مدينة دبي الصناعية - سيح شعيب الثانية، قطعة 1 سيح سليم</p>
+            </div>
+            <div class="footer-section">
+                <h3>أنشطة الرخصة</h3>
+                <p>• وسيط خدمات المركبات - فعال</p>
+                <p>• الفحص الفني للمركبات - فعال</p>
+                <p>• خدمات تفتيش وسائل نقل السلع - فعال</p>
+                <p>• خدمات تسجيل المركبات - فعال</p>
+            </div>
+
+            <div class="disclaimer-box">
+                تنويه هام: هذه المنصة تتبع لشركة عابر لخدمات تسجيل المركبات ش.ذ.م.م وهي جهة تجارية خاصة، ولا تمثل أي جهة حكومية رسمية في الدولة.
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            جميع الحقوق محفوظة لصالح عابر لخدمات تسجيل المركبات ش.ذ.م.م © 2026
+        </div>
+    </footer>
+
+</body>
+</html>
