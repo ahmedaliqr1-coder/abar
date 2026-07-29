@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - عابر لخدمات تسجيل المركبات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #6b1d2f;
+        }
+        .header-logo-badge {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 10px;
+            padding: 6px 14px;
+            box-shadow: 0 3px 10px rgba(107, 29, 47, 0.12);
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-emblem {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6b1d2f, #4a1320);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-title-main {
+            font-size: 15px;
+            font-weight: 900;
+            color: #6b1d2f;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        .logo-subtitle-sub {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555555;
+            letter-spacing: 0.8px;
+        }
+        .lang-btn {
+            background-color: #6b1d2f;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .lang-btn:hover {
+            background-color: #521423;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .legal-content-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #eaeaea;
+        }
+        .legal-content-card h1 {
+            color: #6b1d2f;
+            font-size: 24px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        .legal-section-item {
+            margin-bottom: 25px;
+        }
+        .legal-section-item h3 {
+            color: #6b1d2f;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .legal-section-item p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #6b1d2f;
+            color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            font-size: 13px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: right;
+        }
+        .footer-section h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #f3d6dc;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+        .footer-section p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .disclaimer-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 12px;
+            border: 1px dashed rgba(255,255,255,0.3);
+            text-align: center;
+            grid-column: 1 / -1;
+            line-height: 1.6;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 12px;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-right">
+            <button class="menu-icon" aria-label="القائمة">☰</button>
+            <a href="index_ar.html" class="header-logo-badge">
+                <div class="logo-emblem">ع</div>
+                <div class="logo-text-group">
+                    <span class="logo-title-main">عَابِر</span>
+                    <span class="logo-subtitle-sub">لخدمات تسجيل المركبات</span>
+                </div>
+            </a>
+        </div>
+        <a href="index.html" class="lang-btn">English</a>
+    </header>
+
+    <main>
+        <div class="legal-content-card">
+            <h1>سياسة الخصوصية وحماية البيانات</h1>
+
+            <div class="legal-section-item">
+                <h3>1. التزامنا بحماية الخصوصية</h3>
+                <p>تدرك شركة "عابر لخدمات تسجيل المركبات ش.ذ.م.م" أهمية خصوصيتك، وتلتزم التزاماً تاماً بحماية سرية وأمان البيانات الشخصية والمعلومات التي يقوم المستخدمون بتقديمها عبر المنصة الرقمية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>2. النطاق والتطبيق</h3>
+                <p>تطبق سياسة الخصوصية هذه على كافة الخدمات والصفحات والبوابات التابعة للموقع، وتحدد كيفية جمع واستخدام وحماية ومشاركة البيانات الخاصة بالزوار والمتعاملين.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>3. البيانات التي يتم جمعها</h3>
+                <p>نقوم بجمع بيانات محددة تتضمن أرقام اللوحات المرورية، أرقام الهويات أو الأرقام الشخصية، أرقام المنشآت، وبيانات الاستخدام التقنية اللازمة لإتمام عمليات الاستعلام الفني.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>4. ملفات تعريف الارتباط (Cookies)</h3>
+                <p>تستخدم المنصة ملفات تعريف الارتباط لتحسين تجربة تصفح المستخدم، وتسهيل التنقل بين الأقسام، وحفظ تفضيلات اللغة، وتحليل حركة المرور وزيارات الموقع لرفع كفاءة الأداء.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>5. أهداف استخدام البيانات</h3>
+                <p>تُستخدم البيانات المدخلة حصراً لأغراض إتمام طلبات الاستعلام عن المخالفات، تقديم خدمات الوساطة المرخصة، وتحسين جودة الخدمات الرقمية المقدمة للمتعاملين.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>6. أمن وحماية المعلومات</h3>
+                <p>نتبع أعلى المعايير التقنية والإدارية والبرمجية المتقدمة لتأمين قواعد البيانات وحماية المعلومات من الوصول غير المصرح به، أو التعديل، أو الفقدان، أو الإفشاء.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>7. مشاركة البيانات مع الأطراف الثالثة</h3>
+                <p>لا نقوم ببيع أو المتاجرة ببيانات المستخدمين نهائياً، ولا يتم مشاركة أي معلومات شخصية إلا في حدود ما تتطلبه اللغات التنظيمية المعتمدة أو بطلب قضائي رسمي.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>8. حقوق المستخدم المتعلقة ببياناته</h3>
+                <p>يحق للمستخدم طلب الاطلاع على بياناته المسجلة لدينا، أو طلب تصحيحها، أو تحديثها، أو إيقاف معالجتها وفقاً للضوابط والأطر القانونية المعمول بها في الدولة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>9. روابط المواقع الخارجية</h3>
+                <p>قد تحتوي منصتنا على روابط لمواقع إلكترونية خارجية؛ وننصح المستخدمين بمراجعة سياسات الخصوصية الخاصة بتلك المواقع، حيث إننا لا نتحمل مسؤولية ممارساتها.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>10. خصوصية وقصر الأطفال</h3>
+                <p>لا تستهدف منصتنا أو خدماتنا أي أفراد دون السن القانونية، ولا نقوم عن قصد بجمع أي بيانات شخصية تخص القصر دون موافقة أولياء الأمور أو الأوصياء.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>11. الاحتفاظ بالبيانات وأرشفتها</h3>
+                <p>نحتفظ بالبيانات الرقمية وسجلات الاستعلام للفترات الزمنية اللازمة فقط لتحقيق الأغراض الموضحة في هذه السياسة أو التوافق مع المتطلبات التنظيمية والتشغيلية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>12. التحديثات والتعديلات على السياسة</h3>
+                <p>يحق لإدارة الشركة تعديل أو تحديث بنود سياسة الخصوصية في أي وقت، ويعتبر استمرار استخدامك للموقع بعد نشر التعديلات موافقة صريحة على الشروط المحدثة.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>13. مسؤول أمن المعلومات والاتصال</h3>
+                <p>في حال وجود أي استفسارات أو شكاوى تتعلق بسياسة الخصوصية أو ممارسات حماية البيانات، يمكنكم التواصل مع فريق الدعم المختص لدينا عبر قنوات الاتصال الرسمية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>14. حدود المسؤولية عن الاختراق الخارجي</h3>
+                <p>على الرغم من تطبيقنا لأحدث تدابير الأمن السيبراني، إلا أن الإنترنت لا يمكن ضمان أمانه بنسبة مئوية مطلقة، ولا تتحمل الشركة المسؤولية عن أي هجمات سيبرانية استثنائية.</p>
+            </div>
+
+            <div class="legal-section-item">
+                <h3>15. الموافقة والإقرار بالسياسة</h3>
+                <p>يعتبر استخدامك المستمر لمنصة عابر أو إدخالك لأي بيانات استعلام إقراراً صريحاً بموافقتك على كافة بنود وشروط سياسة الخصوصية وحماية البيانات المذكورة أعلاه.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>معلومات الرخصة الأساسية</h3>
+                <p>الاسم التجاري: عابر لخدمات تسجيل المركبات ش.ذ.م.م</p>
+                <p>رقم الرخصة: 816358</p>
+                <p>الرخصة الموحدة: BC6639</p>
+                <p>نوع الرخصة: تجارية</p>
+                <p>وضع الرخصة: سارية</p>
+            </div>
+            <div class="footer-section">
+                <h3>التفاصيل القانونية والإصدار</h3>
+                <p>الشكل القانوني: شركة ذات مسؤولية محدودة - الشخص الواحد</p>
+                <p>سلطة الإصدار: دائرة الاقتصاد والسياحة</p>
+                <p>تاريخ الإصدار: 2018-10-11</p>
+                <p>تاريخ الانتهاء: 2026-10-10</p>
+                <p>العنوان: أرض ملك مدينة دبي الصناعية - سيح شعيب الثانية، قطعة 1 سيح سليم</p>
+            </div>
+            <div class="footer-section">
+                <h3>أنشطة الرخصة</h3>
+                <p>• وسيط خدمات المركبات - فعال</p>
+                <p>• الفحص الفني للمركبات - فعال</p>
+                <p>• خدمات تفتيش وسائل نقل السلع - فعال</p>
+                <p>• خدمات تسجيل المركبات - فعال</p>
+            </div>
+
+            <div class="disclaimer-box">
+                تنويه هام: هذه المنصة تتبع لشركة عابر لخدمات تسجيل المركبات ش.ذ.م.م وهي جهة تجارية خاصة، ولا تمثل أي جهة حكومية رسمية في الدولة.
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            جميع الحقوق محفوظة لصالح عابر لخدمات تسجيل المركبات ش.ذ.م.م © 2026
+        </div>
+    </footer>
+
+</body>
+</html>
