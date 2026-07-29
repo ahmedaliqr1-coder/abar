@@ -364,6 +364,11 @@
             color: #6b1d2f;
             transition: all 0.3s ease;
         }
+        .icon-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
         .inquiry-card:hover .inquiry-icon {
             transform: scale(1.1);
         }
@@ -485,23 +490,7 @@
                 <!-- بطاقة قيد المنشأة -->
                 <div class="inquiry-card">
                     <div class="inquiry-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
-                            <g fill="none" stroke="#6b1d2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- البناء -->
-                                <rect x="12" y="20" width="40" height="36" rx="2"/>
-                                <!-- النوافذ -->
-                                <rect x="16" y="24" width="6" height="6"/>
-                                <rect x="29" y="24" width="6" height="6"/>
-                                <rect x="42" y="24" width="6" height="6"/>
-                                <rect x="16" y="36" width="6" height="6"/>
-                                <rect x="29" y="36" width="6" height="6"/>
-                                <rect x="42" y="36" width="6" height="6"/>
-                                <!-- الباب -->
-                                <rect x="28" y="48" width="8" height="8" rx="1"/>
-                                <!-- الخط العلوي -->
-                                <line x1="10" y1="20" x2="54" y2="20"/>
-                            </g>
-                        </svg>
+                        <img src="assets/icon-building.png" alt="قيد المنشأة" class="icon-img">
                     </div>
                     <h3>قيد المنشأة</h3>
                     <button class="inquiry-btn">ابدأ الخدمة</button>
@@ -510,17 +499,7 @@
                 <!-- بطاقة الرقم الشخصي -->
                 <div class="inquiry-card">
                     <div class="inquiry-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
-                            <g fill="none" stroke="#6b1d2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- الرأس -->
-                                <circle cx="32" cy="18" r="7"/>
-                                <!-- الجسم -->
-                                <path d="M 32 26 Q 24 32 22 42 L 42 42 Q 40 32 32 26"/>
-                                <!-- الذراعان -->
-                                <line x1="22" y1="32" x2="12" y2="36"/>
-                                <line x1="42" y1="32" x2="52" y2="36"/>
-                            </g>
-                        </svg>
+                        <img src="assets/icon-person.png" alt="الرقم الشخصي" class="icon-img">
                     </div>
                     <h3>الرقم الشخصي</h3>
                     <button class="inquiry-btn">ابدأ الخدمة</button>
@@ -529,20 +508,7 @@
                 <!-- بطاقة رقم المركبة -->
                 <div class="inquiry-card">
                     <div class="inquiry-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
-                            <g fill="none" stroke="#6b1d2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- جسم السيارة -->
-                                <path d="M 12 32 L 16 20 L 48 20 L 52 32 Z"/>
-                                <!-- النوافذ -->
-                                <rect x="18" y="22" width="8" height="6"/>
-                                <rect x="38" y="22" width="8" height="6"/>
-                                <!-- الأسفل -->
-                                <line x1="12" y1="32" x2="52" y2="32"/>
-                                <!-- العجلات -->
-                                <circle cx="22" cy="38" r="4"/>
-                                <circle cx="42" cy="38" r="4"/>
-                            </g>
-                        </svg>
+                        <img src="assets/icon-car.png" alt="رقم المركبة" class="icon-img">
                     </div>
                     <h3>رقم المركبة</h3>
                     <button class="inquiry-btn">ابدأ الخدمة</button>
