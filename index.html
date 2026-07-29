@@ -81,21 +81,47 @@
             color: #555555;
             letter-spacing: 0.8px;
         }
-        .lang-btn {
+        
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             background-color: #6b1d2f;
             color: white;
             border: none;
-            padding: 6px 14px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             transition: background 0.3s;
             text-decoration: none;
         }
-        .lang-btn:hover {
+        .lang-switch:hover {
             background-color: #521423;
         }
+        .qatar-flag {
+            width: 20px;
+            height: auto;
+            border-radius: 2px;
+        }
+        .header-logo-badge {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 2px solid #6b1d2f;
+            border-radius: 10px;
+            padding: 6px 14px;
+            box-shadow: 0 3px 10px rgba(107, 29, 47, 0.12);
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .header-logo-badge:hover {
+            transform: scale(1.02);
+        }
+    
+        
         main {
             flex: 1;
             max-width: 900px;
@@ -321,19 +347,25 @@
 </head>
 <body>
 
+    
+    
     <header>
         <div class="header-right">
             <button class="menu-icon" aria-label="Menu">☰</button>
-            <div class="header-logo-badge">
+            <a href="index.html" class="header-logo-badge">
                 <div class="logo-emblem">A</div>
                 <div class="logo-text-group">
                     <span class="logo-title-main">ABER</span>
                     <span class="logo-subtitle-sub">Vehicle Registration</span>
                 </div>
-            </div>
+            </a>
         </div>
-        <a href="index_ar.html" class="lang-btn">العربية</a>
+        <a href="index_ar.html" class="lang-switch">
+            <img src="assets/qatar-flag.png" alt="Qatar Flag" class="qatar-flag">
+            <span>العربية</span>
+        </a>
     </header>
+    
 
     <main>
         <div class="hero-section">
@@ -448,16 +480,16 @@
             <div class="legal-pages-title">Policies and Legal Pages</div>
             <div class="legal-links-grid">
                 <div class="legal-link-item">
-                    <a href="terms.php">Terms and Conditions</a>
+                    <a href="terms_en.html">Terms and Conditions</a>
                 </div>
                 <div class="legal-link-item">
-                    <a href="privacy.php">Privacy Policy</a>
+                    <a href="privacy_en.html">Privacy Policy</a>
                 </div>
                 <div class="legal-link-item">
-                    <a href="disclaimer.php">Disclaimer</a>
+                    <a href="disclaimer_en.html">Disclaimer</a>
                 </div>
                 <div class="legal-link-item">
-                    <a href="policies.php">Policies & Regulations</a>
+                    <a href="policies_en.html">Policies & Regulations</a>
                 </div>
             </div>
         </div>
